@@ -1,2 +1,2 @@
-== Exemplo de aplicação usando conceitos de polimorfismo.
+== Exemplo de Associação Polimórfica em Ruby on Rails com multiplas associações para um mesmo modelo.
 Foi usado Document(documento) como a entidade polimórfica que aceita associações de Bidding (Licitação) e Concourse (Concurso).
