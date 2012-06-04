@@ -1,0 +1,6 @@
+[1m[37m      invoke[0m  active_record
+[1m[31m      remove[0m    db/migrate/20120603201412_create_documents.rb
+[1m[31m      remove[0m    app/models/document.rb
+[1m[37m      invoke[0m    test_unit
+[1m[31m      remove[0m      test/unit/document_test.rb
+[1m[31m      remove[0m      test/fixtures/documents.yml

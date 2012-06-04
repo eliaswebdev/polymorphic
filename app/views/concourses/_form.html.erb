@@ -1,0 +1,32 @@
+<%= simple_nested_form_for @concourse, :html => { :class => 'form-horizontal', :multipart => true } do |f| %>
+  <%= f.input :name %>
+  <%= f.input :description %>
+
+  <%= f.fields_for :documents do |document| %>
+    <% if document.object.new_record? %>
+      <div class="control-group" style="border-bottom:#eee solid 1px; padding-bottom:10px;">
+        <%= document.file_field :file %>
+        <%= document.text_field :name, :placeholder => 'Descrição' %>
+        <%= document.link_to_remove "Remover este arquivo", :class => 'btn btn-small btn-danger' %> 
+      </div>
+    <% else %>
+      <div class="control-group" style="border-bottom:#eee solid 1px; padding-bottom:10px;">
+      <div class="img_clean">
+        <%= link_to (image_tag '/assets/file_icon_small.png', :alt => ''), "#{document.object.file}", :target => "_blank" %>
+      </div>
+      <%= document.text_field :name, :placeholder => 'Descrição' %>
+      <%= document.link_to_remove "Remover este arquivo", :class => 'btn btn-small btn-danger' %>
+      </div>
+    <% end -%>
+  <% end %>
+  <div class="control-group">
+    <%= f.link_to_add "Adicionar um arquivo", :documents, :class => 'btn btn-success' %>
+  </div>
+
+
+  <div class="form-actions">
+    <%= f.button :submit, :class => 'btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                concourses_path, :class => 'btn' %>
+  </div>
+<% end %>
