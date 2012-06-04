@@ -1,1 +1,2 @@
-# Exemplo de aplicação usando conceitos de polimorfismo. Foi usado a tabela documentos como a entidade polimórfica que aceita associações de Licitações e Concursos.
+== Exemplo de aplicação usando conceitos de polimorfismo.
+Foi usado Document(documento) como a entidade polimórfica que aceita associações de Bidding (Licitação) e Concourse (Concurso).
